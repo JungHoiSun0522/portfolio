@@ -60,7 +60,7 @@ Image processing using MFC/
 ## 📸 데모 화면
 | 기본 화면 | 히스토그램 평활화 | 콘트라스트 | 히스토그램 평활화 -> 콘트라스트 |
 |:---:|:---:|:---:|:---:|
-| ![기본 화면](https://via.placeholder.com/300) | ![히스토그램 평활화](https://via.placeholder.com/300) | ![콘트라스트](https://via.placeholder.com/300) | ![히스토그램 평활화 -> 콘트라스트](https://via.placeholder.com/300) |
+| ![기본 화면](./main_ui.gif) | ![히스토그램 평활화](histogram.JPG) | ![콘트라스트](contrast.JPG) | ![히스토그램 평활화 -> 콘트라스트](hisTOcont.JPG) |
 
 - ### 히스토그램 평활화
    - **원본사진(왼쪽)을 대상으로 히스토그램 평활화 진행**
