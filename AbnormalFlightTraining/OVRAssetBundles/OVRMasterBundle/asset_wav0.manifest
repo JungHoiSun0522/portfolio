@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 3832698202
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a9ac17b9218dcb51e5508f521b63ceda
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Scenes/Audio/Windows Battery Low.wav
+- Assets/Scenes/Audio/1.Airplane Flyby by oscaraudiogeek Id-431206.wav
+Dependencies: []

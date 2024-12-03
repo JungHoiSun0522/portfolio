@@ -1,0 +1,46 @@
+ManifestFileVersion: 0
+CRC: 1586386758
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4340c70c2ad238519aa14eabeaebbc44
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Airliner/models/Textures/Ceiling_walls_M_Door_Frame_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/Fuselage_M_Rear_Gear_Normal.png
+- Assets/Airliner/models/Textures/Lavatories_2t_M_LV_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/Cockpit_M_Cockpit_Glass_1_MetallicSmoothness.png
+- Assets/Urban Low Poly People/Mesh&Textures/Girl/Textures/Girl_11.png
+- Assets/Airliner/models/Textures/business_class_seat_M_Business_seat_Normal.png
+- Assets/Airliner/models/Textures/Lavatories_2t_M_FA_4_MetallicSmoothness.png
+- Assets/Airliner/models/Textures/economy_seats_M_ES_Screen_3_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/Cockpit_M_Cockpit_Screen_5_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/Lavatories_2t_M_FA_4_Normal.png
+- Assets/Airliner/models/Textures/Cockpit_M_Cockpit_Screen_3_Normal.png
+- Assets/Airliner/models/Textures/Lavatories_2t_M_LV_MetallicSmoothness.png
+- Assets/Airliner/models/Textures/comfort_sea_2tt_M_Comfort_seat_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/Galley_2bt_M_FA_light_MetallicSmoothness.png
+- Assets/Airliner/models/Textures/Cockpit_M_Cockpit_Screen_2_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/Cockpit_M_Cockpit_Screen_6_Emission.png
+- Assets/Airliner/models/Textures/Fuselage_M_Engine_Normal.png
+- Assets/Airliner/models/Textures/Doors_All_2t_M_Int_door_Normal.png
+- Assets/Airliner/models/Textures/Cockpit_M_Cockpit_Screen_6_Normal.png
+- Assets/Airliner/models/Textures/Cockpit_M_Cockpit_Glass_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/Doors_All_2t_Glass_rear_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/Fuselage_M_Front_gear_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/business_class_seat_M_Business_seat_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/Cockpit_M_Cockpit_Screen_3_Emission.png
+- Assets/Airliner/models/Textures/economy_seats_M_Economy_seat_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/Cockpit_M_Cockpit_Small_Controls_Normal.png
+- Assets/Airliner/models/Textures/Cockpit_M_Cockpit_Panels_2_MetallicSmoothness.png
+- Assets/Airliner/models/Textures/Cockpit_M_Cockpit_Screen_6_MetallicSmoothness.png
+- Assets/Airliner/models/Textures/Lavatories_2t_M_LV_Normal.png
+- Assets/Airliner/models/Textures/Ceiling_walls_M_Ceiling_Normal.png
+Dependencies: []
