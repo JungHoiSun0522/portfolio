@@ -1,4 +1,4 @@
-﻿
+
 // MFCApplication1Dlg.cpp: 구현 파일
 //
 
@@ -106,6 +106,28 @@ BOOL CMFCApplication1Dlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 	SetWindowText(_T("Image processing using MFC"));
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
+
+	CWnd* pPicture1 = GetDlgItem(IDC_PIC1); // 기준 컨트롤 ID
+	CWnd* pPicture2 = GetDlgItem(IDC_PIC2); // 크기를 변경할 컨트롤 ID
+
+	if (pPicture1 && pPicture2)
+	{
+		// 기준 컨트롤의 크기 가져오기
+		CRect rect1;
+		pPicture1->GetWindowRect(&rect1);
+
+		// 변경할 컨트롤의 위치 가져오기
+		CRect rect2;
+		pPicture2->GetWindowRect(&rect2);
+
+		// 기준 컨트롤의 크기 적용 (위치는 유지)
+		rect2.right = rect2.left + rect1.Width();
+		rect2.bottom = rect2.top + rect1.Height();
+
+		// 다이얼로그 기준 좌표로 변환 후 크기 변경
+		ScreenToClient(&rect2);
+		pPicture2->MoveWindow(rect2);
+	}
 
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
