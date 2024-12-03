@@ -62,7 +62,7 @@ Image processing using MFC/
 ## 📸 데모 화면
 | 기본 화면 | 히스토그램 평활화 | 콘트라스트 | 히스토그램 평활화 -> 콘트라스트 |
 |:---:|:---:|:---:|:---:|
-| ![기본 화면](https://via.placeholder.com/300) | ![히스토그램 평활화]tps://via.placeholder.com/300) | ![콘트라스트](https://via.placeholder.com/300) | ![히스토그램 평활화 -> 콘트라스트](https://via.placeholder.com/300) |
+| ![기본 화면](https://via.placeholder.com/300) | ![히스토그램 평활화](tps://via.placeholder.com/300) | ![콘트라스트](https://via.placeholder.com/300) | ![히스토그램 평활화 -> 콘트라스트](https://via.placeholder.com/300) |
 
 ---
 
