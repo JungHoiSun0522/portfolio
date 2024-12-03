@@ -1,0 +1,50 @@
+ManifestFileVersion: 0
+CRC: 3356872736
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7dfb2a44e81d9d995c61d890fb978c7b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: bb6fbfbd6a9da4be36f81f4b15cafdd7
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Airliner/models/Doors.fbx
+- Assets/Animation/Sitting1.fbx
+- Assets/Airliner/models/BC_seat_R.fbx
+- Assets/Airliner/models/CC_Seat.fbx
+- Assets/Airliner/models/BC_seat_L.fbx
+- Assets/Animation/Sitting.fbx
+- Assets/Animation/Standing.fbx
+- Assets/Airliner/models/Galleys.fbx
+- Assets/Animation/Running.fbx
+- Assets/Airliner/models/Fuselage.fbx
+- Assets/slide/SLIDE_V01.fbx
+- Assets/Animation/SitAround.fbx
+- Assets/Animation/Stop Walking.fbx
+Dependencies:
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_mat1
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_mat2

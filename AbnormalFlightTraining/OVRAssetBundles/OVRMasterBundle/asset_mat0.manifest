@@ -1,0 +1,60 @@
+ManifestFileVersion: 0
+CRC: 2979304107
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e259271ce8f7e894dbf64b3431f4579c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 41f5e68da31a4f6b36e45572326352d3
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Airliner/models/Materials/Landing_gear_hull.mat
+- Assets/Airliner/models/Materials/M_FA_4.mat
+- Assets/Urban Low Poly People/Mesh&Textures/Girl/Materials/Girl_55.mat
+- Assets/Airliner/models/Materials/Front_gear.mat
+- Assets/Urban Low Poly People/Mesh&Textures/Girl/Materials/Girl_11.mat
+- Assets/Urban Low Poly People/Mesh&Textures/Girl/Materials/Girl_22_hair.mat
+- Assets/Urban Low Poly People/Mesh&Textures/Girl/Materials/Girl_22.mat
+- Assets/Airliner/models/Materials/M_CC_Screen_1.mat
+- Assets/Airliner/models/Materials/M_Screen_4.mat
+- Assets/Urban Low Poly People/Mesh&Textures/Man/Materials/Man_22.mat
+- Assets/Airliner/models/Materials/Fuselage.mat
+- Assets/Urban Low Poly People/Mesh&Textures/Girl/Materials/Girl_77.mat
+- Assets/Oculus/SampleFramework/Usage/Locomotion/Materials/DebugDrawLine.mat
+- Assets/Airliner/scenes/airliner/Materials/ReflectionProbe-0.mat
+- Assets/Airliner/models/Materials/Glass_rear.mat
+- Assets/Urban Low Poly People/Mesh&Textures/Girl/Materials/Girl_44.mat
+- Assets/Airliner/models/Materials/M_Inner_walls_1.mat
+- Assets/Airliner/models/Materials/M_Business_seat.mat
+- Assets/Airliner/models/Materials/M_Screen_6.mat
+- Assets/Airliner/models/Materials/M_ES_Screen_1.mat
+- Assets/Airliner/models/Materials/Glass_1.mat
+- Assets/Airliner/models/Materials/M_Business_seat.001.mat
+- Assets/Airliner/models/Materials/Rear_Gear.mat
+- Assets/Airliner/models/Materials/M_Economy_seat.mat
+- Assets/Airliner/models/Materials/M_CC_Screen_2.mat
+- Assets/Airliner/models/Materials/M_LV_Walls.mat
+- Assets/Oculus/Interaction/Runtime/Materials/Unlit Material.mat
+- Assets/Airliner/models/Materials/M_Seats.mat
+- Assets/Oculus/SampleFramework/Core/CustomHands/Materials/Hands_solid.mat
+- Assets/Airliner/models/Materials/M_Panels_2.mat
+Dependencies:
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_exr0
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_png0
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_png1
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_png2
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_png3
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_png4
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_png5
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_tga0

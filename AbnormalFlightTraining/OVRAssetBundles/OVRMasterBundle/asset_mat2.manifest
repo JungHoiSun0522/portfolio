@@ -1,0 +1,45 @@
+ManifestFileVersion: 0
+CRC: 2429841659
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a723ff8eca8557b101cb5d72eb8beb7a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 939e20ecac0e95a3f7c5cfb3e57acb1d
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Airliner/models/Materials/M_BC_Screen_1.mat
+- Assets/Urban Low Poly People/Mesh&Textures/Girl/Materials/Girl_66_hair.mat
+- Assets/Airliner/models/Materials/M_Galley_walls.mat
+- Assets/Urban Low Poly People/Mesh&Textures/Girl/Materials/Girl_77_hair.mat
+- Assets/Airliner/models/Materials/M_Cockpit_door.mat
+- Assets/Airliner/models/Materials/Glass_front_door.mat
+- Assets/Urban Low Poly People/Mesh&Textures/Girl/Materials/Girl_33_hair.mat
+- Assets/Urban Low Poly People/Mesh&Textures/Girl/Materials/Girl_33.mat
+- Assets/Urban Low Poly People/Mesh&Textures/Girl/Materials/Girl_66.mat
+- Assets/Airliner/models/Materials/M_Panels_1.mat
+- Assets/Airliner/models/Materials/M_Inner_walls.mat
+- Assets/Airliner/models/Materials/M_BC_Screen_2.mat
+- Assets/Urban Low Poly People/Mesh&Textures/Man/Materials/Man_44.mat
+- Assets/Urban Low Poly People/Mesh&Textures/Girl/Materials/Girl_55_hair.mat
+- Assets/Airliner/models/Materials/M_Floor.mat
+- Assets/Airliner/models/Materials/M_Galleys_2.mat
+- Assets/Airliner/models/Materials/M_Screen_3.mat
+- Assets/Airliner/models/Materials/M_Int_door_front.mat
+Dependencies:
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_png0
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_png1
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_png2
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_png3
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_png4
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_png5
+- C:/Users/siunm/Final/OVRAssetBundles/OVRMasterBundle/asset_tga0
