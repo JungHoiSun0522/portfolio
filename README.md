@@ -26,7 +26,7 @@
 - 프레임워크: MFC (Microsoft Foundation Classes)
 - 개발 도구: Visual Studio 2019
 - 알고리즘: 이미지 처리 및 필터링 알고리즘 (Contrast Adjustment, Histogram Equalization 등)
-- **링크**: [MFC를 활용한 이미지 처리]([https://github.com/your-project-link](https://github.com/JungHoiSun0522/portfolio/tree/main/Image%20processing%20using%20MFC))
+- **링크**: [MFC를 활용한 이미지 처리](https://github.com/JungHoiSun0522/portfolio/tree/main/Image%20processing%20using%20MFC)
 
 ### 3. **프로젝트 이름** - 프로젝트 설명
 > 또 다른 프로젝트에 대한 설명을 작성합니다.
