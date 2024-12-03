@@ -30,9 +30,10 @@
    git clone https://github.com/JungHoiSun0522/portfolio.git
    ```
 2. **필요한 의존성 설치**
-   - Python 3.x 버전 설치
+   - Unity 설치
+   - 에디터 버전 2020.3.37f1 (64-bit) 설치
 3. **프로그램 실행**
-
+   - meta quest2
 ---
 
 ## 📂 프로젝트 구조
@@ -54,9 +55,9 @@ AbnormalFlightTraining/
 
 ## 🛠️ 사용 기술
 
-- **프로그래밍 언어**: Python
-- **라이브러리**: Pygame, NumPy, Pandas 등
-- **개발 도구**: Visual Studio Code, Git
+- **프로그래밍 언어**: C#
+- **개발 도구**: OVR Metrics Tool
+- **게임 엔진**: Unity3D + 2020.3.37f1 (64-bit)
 
 ---
 
