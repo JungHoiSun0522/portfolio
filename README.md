@@ -11,12 +11,15 @@
 
 ## 📂 프로젝트
 
-### 1. **프로젝트 이름** - 프로젝트 설명
-> 해당 프로젝트에 대한 간단한 설명과 목표를 작성합니다. 예: 이 프로젝트는 얼굴 인식을 위한 딥러닝 모델을 사용한 실시간 얼굴 인식 시스템입니다.
+### 1. **스마트 TV 생산 라인 자동화 솔루션** - 프로젝트 설명
+> 스마트 TV 생산 공정의 효율성을 극대화하기 위한 통합 자동화 솔루션입니다.
 
-- **기술 스택**: TensorFlow, OpenCV, RealSense
-- **주요 기능**: 실시간 얼굴 감지 및 이름 저장, 얼굴 위치 시각화
-- **링크**: [프로젝트 GitHub 링크](https://github.com/your-project-link)
+- **기술 스택**: Ros2, RoboDK, Yolov5, OpenCV, RealSense, Django, Vue.js
+- **주요 기능**: 
+  Intel RealSense D435i 카메라와 YOLOv5 모델을 사용하여 패널의 종류를 실시간으로 분류
+  Dobot Magician 로봇 암 및 컨베이어 벨트를 제어하여 패널을 분류 및 이동
+  ROS2를 통한 데이터 통신과 장비 간 동작을 관리하며 RoboDK 시뮬레이션을 통해 작업 환경을 테스트
+- **링크**: [스마트 TV 생산 라인 자동화 솔루션](https://github.com/JungHoiSun0522/portfolio/tree/main/Smart_TV_production_line_automation_factory_solution)
 
 ### 2. **프로젝트 이름** - 프로젝트 설명
 > 두 번째 프로젝트에 대한 설명을 작성합니다.
