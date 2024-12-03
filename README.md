@@ -11,8 +11,7 @@
 
 ## 📂 프로젝트
 
-### 1. **스마트 TV 생산 라인 자동화 솔루션** - 프로젝트 설명
-> 스마트 TV 생산 공정의 효율성을 극대화하기 위한 통합 자동화 솔루션입니다.
+### 1. **스마트 TV 생산 라인 자동화 솔루션** - 스마트 TV 생산 공정의 효율성을 극대화하기 위한 통합 자동화 솔루션입니다.
 
 - **기술 스택**: Ros2, RoboDK, Yolov5, OpenCV, RealSense, Django, Vue.js
 - **주요 기능**:
@@ -21,12 +20,13 @@
   - ROS2를 통한 데이터 통신과 장비 간 동작을 관리하며 RoboDK 시뮬레이션을 통해 작업 환경을 테스트
 - **링크**: [스마트 TV 생산 라인 자동화 솔루션](https://github.com/JungHoiSun0522/portfolio/tree/main/Smart_TV_production_line_automation_factory_solution)
 
-### 2. **프로젝트 이름** - 프로젝트 설명
-> 두 번째 프로젝트에 대한 설명을 작성합니다.
+### 2. **MFC를 활용한 이미지 처리** - MFC(Microsoft Foundation Classes)를 활용하여 구현한 이미지 처리 응용 프로그램입니다.
 
-- **기술 스택**: ROS2, Python, TensorFlow
-- **주요 기능**: 로봇 부품 분류 및 실시간 모니터링 시스템
-- **링크**: [프로젝트 GitHub 링크](https://github.com/your-project-link)
+- 프로그래밍 언어: C++
+- 프레임워크: MFC (Microsoft Foundation Classes)
+- 개발 도구: Visual Studio 2019
+- 알고리즘: 이미지 처리 및 필터링 알고리즘 (Contrast Adjustment, Histogram Equalization 등)
+- **링크**: [MFC를 활용한 이미지 처리]([https://github.com/your-project-link](https://github.com/JungHoiSun0522/portfolio/tree/main/Image%20processing%20using%20MFC))
 
 ### 3. **프로젝트 이름** - 프로젝트 설명
 > 또 다른 프로젝트에 대한 설명을 작성합니다.
