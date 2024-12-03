@@ -38,11 +38,13 @@
 ## 📂 프로젝트 구조
 ```
 Image processing using MFC/
-├── res/                  # 리소스 파일
-├── src/                  # 주요 소스 코드
-│   ├── MainFrame.cpp     # 메인 프레임 설정
-│   ├── ImageProcess.cpp  # 이미지 처리 로직
-│   └── UIHandler.cpp     # UI 이벤트 처리
+├── res/                  # 리소스 파일                 # 주요 소스 코드
+│   ├── MFCApplication1.ico     # 메인 메뉴 아이콘
+│   └── MFCApplication1.rc2     # UI 이벤트 처리
+├── MFCApplication1.cpp   #  애플리케이션에 대한 클래스 동작을 정의
+├── MFCApplication1Dlg.cpp   # 이미지 처리 로직, UI 이벤트 처리 등 구현
+├── MFCApplication1Dlg.h   # 다이얼로그 클래스 헤더
+ㆍㆍㆍ
 ├── ImageProcessingApp.sln # Visual Studio 솔루션 파일
 └── README.md             # 프로젝트 설명 파일
 ```
