@@ -11,7 +11,8 @@
 
 ## 📂 프로젝트
 
-### 1. **스마트 TV 생산 라인 자동화 솔루션** - 스마트 TV 생산 공정의 효율성을 극대화하기 위한 통합 자동화 솔루션입니다.
+### 1. **스마트 TV 생산 라인 자동화 솔루션** 
+>스마트 TV 생산 공정의 효율성을 극대화하기 위한 통합 자동화 솔루션입니다.
 
 - **기술 스택**: Ros2, RoboDK, Yolov5, OpenCV, RealSense, Django, Vue.js
 - **주요 기능**:
@@ -20,7 +21,8 @@
   - ROS2를 통한 데이터 통신과 장비 간 동작을 관리하며 RoboDK 시뮬레이션을 통해 작업 환경을 테스트
 - **링크**: [스마트 TV 생산 라인 자동화 솔루션](https://github.com/JungHoiSun0522/portfolio/tree/main/Smart_TV_production_line_automation_factory_solution)
 
-### 2. **MFC를 활용한 이미지 처리** - MFC(Microsoft Foundation Classes)를 활용하여 구현한 이미지 처리 응용 프로그램입니다.
+### 2. **MFC를 활용한 이미지 처리** 
+>MFC(Microsoft Foundation Classes)를 활용하여 구현한 이미지 처리 응용 프로그램입니다.
 
 - **기술 스택**:
 - 프로그래밍 언어: C++
@@ -29,7 +31,8 @@
 - 알고리즘: 이미지 처리 및 필터링 알고리즘 (Contrast Adjustment, Histogram Equalization 등)
 - **링크**: [MFC를 활용한 이미지 처리](https://github.com/JungHoiSun0522/portfolio/tree/main/Image%20processing%20using%20MFC)
 
-### 3. **비정상 비행 훈련 시스템** - 비행 중 발생할 수 있는 이상 상황을 학습하고 대처하는 능력을 향상시키기 위한 교육용 소프트웨어입니다.
+### 3. **비정상 비행 훈련 시스템** 
+>비행 중 발생할 수 있는 이상 상황을 학습하고 대처하는 능력을 향상시키기 위한 교육용 소프트웨어입니다.
 
 - **기술 스택**:
   - 프로그래밍 언어: C#
