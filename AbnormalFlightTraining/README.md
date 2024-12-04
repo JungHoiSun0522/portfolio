@@ -36,14 +36,24 @@
 
 ```
 AbnormalFlightTraining/
-├── data/                   # 비행 데이터 및 로그 파일
-├── docs/                   # 문서화 파일
-├── src/                    # 소스 코드
-│   ├── main.py             # 메인 실행 파일
-│   ├── simulator/          # 시뮬레이터 모듈
-│   ├── training/           # 훈련 모듈
-│   └── analysis/           # 데이터 분석 모듈
-├── tests/                  # 테스트 코드
+├── Asset/                   # 비행 데이터 및 로그 파일
+│   ├── Animation/   # 승객 에셋 애니메이션 모음 폴더
+│   ├── aniamteController/   # 애니메이션 컨트롤러
+│   ├── dooranimation/
+│      ├── Door_Iatch_10.anim   # 문의 latch를 움직임을 구현
+│      ├── Door_door_10.anim   # 문이 열리는 동작을 구현
+│      └── DoorController.controller   # latch가 당겨졌을 때 문이 열리게 컨트롤 설정
+ㆍㆍㆍ
+│   └── Scripts/
+│      ├── CameraShake.cs      # 카메라 흔들림으로 기체 흔들림 구현
+│      ├── LightBlink.cs       # 기체가 흔들리는 동안 불빛이 깜빡이도록 구현
+│      ├── Exit.cs             # 기체 흔들림 후 승객들이 줄을 서는 것과 콜라이더를 이용한 트리거로 run.cs 호출 구현
+│      ├── run.cs              # 탈출 시 도착지점을 설정. 도착지점 도달을 SetDestination으로 구현
+│      └── Ending.cs           # 상황 종료 후 메인으로 돌아가기 또는 종료 구현
+ㆍㆍㆍ
+├── OVRAssetBundles/OVRMasterBundle/   
+├── ProjectSettings/
+├── UserSettings/                  
 └── README.md               # 프로젝트 설명서
 ```
 
@@ -62,15 +72,6 @@ AbnormalFlightTraining/
 | 시작 화면 | 기체흔들림 및 <br>승객 탈출 유도 | 승객 탈출 |
 |:---:|:---:|:---:|
 | ![시작 화면](./start.jpg) | ![기체흔들림 및 승객 탈출 유도](./cameraShake.gif) | ![승객 탈출](escape.jpg) |
-
-- 히스토그램 평활화
-   - 원본사진(왼쪽)을 대상으로 히스토그램 평활화 진행
- - 콘트라스트
-   - 원본사진(왼쪽)을 대상으로 콘트라스트 진행
-- 히스토그램 평활화 -> 콘트라스트
-   - 원본사진(왼쪽)을 대상으로 히스토그램 평활화 진행하여 원본 사진 위치에 표현
-   - 히스토그램 평활화 사진을 콘트라스트하여 오른쪽에 표현
-
 
 ---
 
