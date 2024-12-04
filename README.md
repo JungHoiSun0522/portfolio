@@ -47,4 +47,4 @@
 
 ## 📫 연락처
 - **이메일**: siunm6610@naver.com
-- **GitHub**: [GitHub 프로필 링크](https://github.com/JungHoiSun0522/portfolio.git)
+- **GitHub**: [GitHub 포트폴리오 링크](https://github.com/JungHoiSun0522/portfolio.git)
