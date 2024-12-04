@@ -22,18 +22,21 @@
 
 ### 2. **MFC를 활용한 이미지 처리** - MFC(Microsoft Foundation Classes)를 활용하여 구현한 이미지 처리 응용 프로그램입니다.
 
+- **기술 스택**:
 - 프로그래밍 언어: C++
 - 프레임워크: MFC (Microsoft Foundation Classes)
 - 개발 도구: Visual Studio 2019
 - 알고리즘: 이미지 처리 및 필터링 알고리즘 (Contrast Adjustment, Histogram Equalization 등)
 - **링크**: [MFC를 활용한 이미지 처리](https://github.com/JungHoiSun0522/portfolio/tree/main/Image%20processing%20using%20MFC)
 
-### 3. **프로젝트 이름** - 프로젝트 설명
-> 또 다른 프로젝트에 대한 설명을 작성합니다.
+### 3. **비정상 비행 훈련 시스템** - 비행 중 발생할 수 있는 이상 상황을 학습하고 대처하는 능력을 향상시키기 위한 교육용 소프트웨어입니다.
 
-- **기술 스택**: YOLOv5, pyrealsense2
-- **주요 기능**: 실시간 객체 인식 및 데이터 수집
-- **링크**: [프로젝트 GitHub 링크](https://github.com/your-project-link)
+- **기술 스택**:
+  - 프로그래밍 언어: C#
+  - 개발 도구: OVR Metrics Tool
+  - 게임 엔진: Unity3D + 2020.3.37f1 (64-bit)
+  - 알고리즘 : Mode 알고리즘
+- **링크**: [비정상 비행 훈련 시스템](https://github.com/JungHoiSun0522/portfolio/tree/main/AbnormalFlightTraining)
 
 ## 🌱 학습 & 성장
 - **현재 학습 중**: TensorFlow 모델 최적화, ROS2와 딥러닝 모델 통합, OpenCV를 활용한 이미지 처리
