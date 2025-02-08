@@ -4,8 +4,8 @@
 
 ## 💼 주요 기술
 - **프로그래밍 언어**: C++, C#, Python
-- **딥러닝 프레임워크**: TensorFlow Lite
-- **라이브러리**: OpenCV, PyTorch, ROS2
+- **프레임워크**: TensorFlow Lite, PyTorch, mediapipe
+- **라이브러리**: OpenCV, ROS2
 - **게임 엔진**: Unity3D
 - **기타 기술**: MFC
 
