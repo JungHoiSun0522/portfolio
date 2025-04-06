@@ -71,7 +71,7 @@ AbnormalFlightTraining/
 
 | 시작 화면 | 기체흔들림 및 <br>승객 탈출 유도 | 승객 탈출 |
 |:---:|:---:|:---:|
-| ![시작 화면](./start.jpg) | ![기체흔들림 및 승객 탈출 유도](./cameraShake.gif) | ![승객 탈출](escape.jpg) |
+| ![시작 화면](https://github.com/JungHoiSun0522/portfolio/blob/third_pjt/AbnormalFlightTraining/start.jpg) | ![기체흔들림 및 승객 탈출 유도](https://github.com/JungHoiSun0522/portfolio/blob/third_pjt/AbnormalFlightTraining/cameraShake.gif) | ![승객 탈출](https://github.com/JungHoiSun0522/portfolio/blob/third_pjt/AbnormalFlightTraining/escape.jpg) |
 
 ---
 
