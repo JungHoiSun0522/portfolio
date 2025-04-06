@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 3130272422
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 985b2cde8a3e64558339b25778153a45
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Scenes/Audio/Button SFX.mp3
+- "Assets/Scenes/Audio/\uBE44\uD589\uAE30 \uAE30\uCCB4\uAC00 \uD754\uB4E4\uB9AC\uB294
+  \uC18C\uB9AC.mp3"
+Dependencies: []

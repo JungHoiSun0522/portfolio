@@ -1,0 +1,48 @@
+ManifestFileVersion: 0
+CRC: 931419563
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: aa0318b5e9d2e95c16b3d52c20596655
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4df8c69f2c8a6ad9e3cbf82bb83e4dc3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Airliner/models/Textures/Inner_walls_M_Inner_walls_Normal.png
+- Assets/Airliner/models/Textures/Doors_All_2t_Glass_front_door_Normal.png
+- Assets/Urban Low Poly People/Mesh&Textures/Girl/Textures/Girl_22.png
+- Assets/Airliner/models/Textures/economy_seats_M_ES_Screen_1_Normal.png
+- Assets/Airliner/models/Textures/business_class_seat_M_BC_Screen_1_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/comfort_sea_2tt_M_Comfort_seat_Normal.png
+- Assets/Airliner/models/Textures/Cockpit_M_Cockpit_Seats_Normal.png
+- Assets/Urban Low Poly People/Mesh&Textures/Man/Textures/Man_99.png
+- Packages/com.unity.inputsystem/InputSystem/Editor/Icons/InputSystemUIInputModule@64.png
+- Assets/Urban Low Poly People/Mesh&Textures/Man/Textures/Man_111.png
+- Assets/Airliner/models/Textures/comfort_sea_2tt_M_Comfort_seat_MetallicSmoothness.png
+- Assets/Airliner/models/Textures/Fuselage_M_Fuselage_MetallicSmoothness.png
+- Assets/Airliner/models/Textures/economy_seats_M_ES_Screen_2_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/economy_seats_M_ES_Screen_1_MetallicSmoothness.png
+- Assets/Airliner/models/Textures/comfort_sea_2tt_M_CC_Screen_2_MetallicSmoothness.png
+- Assets/Airliner/models/Textures/Cockpit_M_Cockpit_Small_Controls_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/Doors_All_2t_M_Int_door_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/Fuselage_M_Landing_gear_hull_AlbedoTransparency.png
+- Assets/Urban Low Poly People/Mesh&Textures/Man/Textures/Man_77.png
+- Assets/Airliner/models/Textures/Cockpit_M_Cockpit_Screen_4_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/Lavatories_2t_M_FA_4_AlbedoTransparency.png
+- Assets/Airliner/models/Textures/Lavatories_2t_M_FA_light_MetallicSmoothness.png
+- Assets/Airliner/models/Textures/Fuselage_M_Rear_Gear_AlbedoTransparency.png
+- Assets/Urban Low Poly People/Mesh&Textures/Girl/Textures/Girl_66.png
+- Assets/Airliner/models/Textures/Galley_2bt_M_FA_light_Normal.png
+- Assets/Airliner/models/Textures/Galley_2bt_M_Galleys_1_MetallicSmoothness.png
+- Assets/Scenes/KakaoTalk_20221123_185939841.png
+- Assets/Airliner/models/Textures/Fuselage_M_Wing_Normal.png
+- Assets/Airliner/models/Textures/business_class_seat_M_BC_Screen_2_MetallicSmoothness.png
+- Assets/Airliner/models/Textures/Cockpit_M_Cockpit_Glass_Normal.png
+Dependencies: []

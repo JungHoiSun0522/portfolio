@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 425363707
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 62a3bfebeb01346bacf01b321b755d98
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2c040cef7601b3c05f2f6ecddfcec8c0
+HashAppended: 0
+ClassTypes:
+- Class: 89
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Airliner/scenes/airliner/ReflectionProbe-0.exr
+Dependencies: []
