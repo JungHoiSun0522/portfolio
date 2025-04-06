@@ -77,7 +77,7 @@ def detect_panel():
 - Raspberry Pi GPIO 핀을 통해 컨베이어 벨트를 제어합니다
 - 탐지된 패널 정보를 기반으로 패널을 좌우로 분류하거나 다음 작업 구역으로 이동합니다
 
-![컨베이어벨트](https://github.com/sms1875/Smart_TV_production_line_automation_factory_solution/blob/main/assets/img/%EC%BB%A8%EB%B2%A0%EC%9D%B4%EC%96%B4%EB%B2%A8%ED%8A%B8.gif?raw=true)
+![컨베이어벨트](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/%EC%BB%A8%EB%B2%A0%EC%9D%B4%EC%96%B4%EB%B2%A8%ED%8A%B8.gif)
 
 **컨베이어 벨트의 구조 및 역할**
 
@@ -221,7 +221,7 @@ elif command == '3':  # 서보 모터 180도 후 초기화
 - Dobot Magician을 사용하여 패널을 조립 구역으로 옮깁니다
 - ROS2 Action Client를 통해 로봇 암의 위치를 제어하고 흡착컵을 사용하여 패널을 픽업합니다
 
-![두봇](https://github.com/sms1875/Smart_TV_production_line_automation_factory_solution/blob/main/assets/img/%EB%91%90%EB%B4%87.gif?raw=true)
+![두봇](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/%EB%91%90%EB%B4%87.gif)
 
 **흡착컵 동작 구현**
 
@@ -611,7 +611,7 @@ def task_list(request):
 }
 ```
 
-![백엔드](https://github.com/sms1875/Smart_TV_production_line_automation_factory_solution/blob/main/assets/img/web%20(3).png?raw=true)
+![백엔드](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/web%20(3).png)
 
 ---
 
@@ -619,15 +619,15 @@ def task_list(request):
 
 ### 프론트엔드 
 
-![프론트1](https://github.com/sms1875/Smart_TV_production_line_automation_factory_solution/blob/main/assets/img/web%20(1).png?raw=true)
-![프론트2](https://github.com/sms1875/Smart_TV_production_line_automation_factory_solution/blob/main/assets/img/web%20(2).png?raw=true)
-![프론트4](https://github.com/sms1875/Smart_TV_production_line_automation_factory_solution/blob/main/assets/img/web%20(4).png?raw=true)
-![프론트5](https://github.com/sms1875/Smart_TV_production_line_automation_factory_solution/blob/main/assets/img/web%20(5).png?raw=true)
-![프론트6](https://github.com/sms1875/Smart_TV_production_line_automation_factory_solution/blob/main/assets/img/web%20(6).png?raw=true)
-![프론트7](https://github.com/sms1875/Smart_TV_production_line_automation_factory_solution/blob/main/assets/img/web%20(7).png?raw=true)
+![프론트1](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/web%20(1).png)
+![프론트2](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/web%20(2).png)
+![프론트4](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/web%20(4).png)
+![프론트5](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/web%20(5).png)
+![프론트6](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/web%20(6).png)
+![프론트7](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/web%20(7).png)
 
 
 ### 로봇 제어
-![매크로작업](https://github.com/sms1875/Smart_TV_production_line_automation_factory_solution/blob/main/assets/img/%EB%A7%A4%ED%81%AC%EB%A1%9C%EC%9E%91%EC%97%85.gif?raw=true)
+![매크로작업](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/%EB%A7%A4%ED%81%AC%EB%A1%9C%EC%9E%91%EC%97%85.gif)
 
 
