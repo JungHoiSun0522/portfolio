@@ -23,7 +23,7 @@
 
 1. **레포지토리 클론**
    ```bash
-   git clone https://github.com/JungHoiSun0522/portfolio.git
+   git clone -b third_pjt --single-branch https://github.com/JungHoiSun0522/portfolio.git
    ```
 2. **필요한 의존성 설치**
    - Unity 설치
