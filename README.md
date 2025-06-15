@@ -24,7 +24,7 @@
 ## 🚀 프로젝트 실행 방법
 1. **레포지토리 클론**
    ```bash
-   git clone https://github.com/JungHoiSun0522/portfolio.git
+   git clone -b second_pjt --single-branch https://github.com/JungHoiSun0522/portfolio.git
    ```
 2. **Visual Studio에서 프로젝트 열기**
    - Visual Studio 2019 이상 권장.
