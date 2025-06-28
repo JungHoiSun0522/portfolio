@@ -12,7 +12,7 @@
 
 ## 개발 환경
 
-- **운영 체제**: Ubuntu 20.04 (서버), Raspberry Pi OS (컨베이어 제어)
+- **운영 체제**: Ubuntu 22.04 (서버), Raspberry Pi OS (컨베이어 제어)
 - **프로그래밍 언어**: Python 3.8, JavaScript (Vue.js)
 - **주요 하드웨어**:
     - Dobot Magician (로봇)
