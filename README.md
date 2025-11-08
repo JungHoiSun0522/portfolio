@@ -34,7 +34,7 @@
 - 알고리즘: 이미지 처리 및 필터링 알고리즘 (Contrast Adjustment, Histogram Equalization 등)
 - **링크**: [MFC를 활용한 이미지 처리](https://github.com/JungHoiSun0522/portfolio/tree/second_pjt)
 
-### 3. **VR HMD를 활용한 비정상 비행 훈련 시스템** 
+### 3. **VR HMD를 활용한 비정상비행 승무원 교육훈련 콘텐츠** 
 >비행 중 발생할 수 있는 이상 상황을 학습하고 대처하는 능력을 향상시키기 위한 교육용 소프트웨어입니다.
 
 - **기술 스택**:
@@ -42,7 +42,7 @@
   - 개발 도구: OVR Metrics Tool
   - 게임 엔진: Unity3D + 2020.3.37f1 (64-bit)
   - 알고리즘 : Mode 알고리즘
-- **링크**: [VR HMD를 활용한 비정상 비행 훈련 시스템](https://github.com/JungHoiSun0522/portfolio/tree/third_pjt)
+- **링크**: [VR HMD를 활용한 비정상비행 승무원 교육훈련 콘텐츠](https://github.com/JungHoiSun0522/portfolio/tree/third_pjt)
 
 ## 🌱 학습 & 성장
 - **현재 학습 중**: SDI기반 MFC
