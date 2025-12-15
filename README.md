@@ -611,7 +611,7 @@ def task_list(request):
 }
 ```
 
-![백엔드](Smart_TV_production_line_automation_factory_solution/assets/img/web (3).png)
+![백엔드](Smart_TV_production_line_automation_factory_solution/assets/img/web%20(3).png)
 
 ---
 
@@ -628,6 +628,6 @@ def task_list(request):
 
 
 ### 로봇 제어
-![매크로작업](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/%EB%A7%A4%ED%81%AC%EB%A1%9C%EC%9E%91%EC%97%85.gif)
+![매크로작업](Smart_TV_production_line_automation_factory_solution/assets/img/%EB%A7%A4%ED%81%AC%EB%A1%9C%EC%9E%91%EC%97%85.gif)
 
 
