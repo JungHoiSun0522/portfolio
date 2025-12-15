@@ -23,7 +23,7 @@
 
 1. **레포지토리 클론**
    ```bash
-   git clone -b third_pjt --single-branch https://github.com/JungHoiSun0522/portfolio.git
+   git clone -b 3rd_pjt --single-branch https://github.com/JungHoiSun0522/portfolio.git
    ```
 2. **필요한 의존성 설치**
    - Unity 설치
@@ -71,7 +71,7 @@ AbnormalFlightTraining/
 
 | 시작 화면 | 기체흔들림 및 <br>승객 탈출 유도 | 승객 탈출 |
 |:---:|:---:|:---:|
-| ![시작 화면](https://github.com/JungHoiSun0522/portfolio/blob/third_pjt/AbnormalFlightTraining/start.jpg) | ![기체흔들림 및 승객 탈출 유도](https://github.com/JungHoiSun0522/portfolio/blob/third_pjt/AbnormalFlightTraining/cameraShake.gif) | ![승객 탈출](https://github.com/JungHoiSun0522/portfolio/blob/third_pjt/AbnormalFlightTraining/escape.jpg) |
+| ![시작 화면](AbnormalFlightTraining/start.jpg) | ![기체흔들림 및 승객 탈출 유도](AbnormalFlightTraining/cameraShake.gif) | ![승객 탈출](AbnormalFlightTraining/escape.jpg) |
 
 ---
 
