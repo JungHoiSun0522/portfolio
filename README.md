@@ -48,10 +48,10 @@
 >MFC와 WPF를 활용하여 TCP/IP기반 1:N 유저 채팅 프로그램입니다.
 
 - **기술 스택**:
-- 프로그래밍 언어: C++, C#
-- GUI 프레임워크: MFC, WPF
-- 개발 도구: Visual Studio 2019
-- 포트 포워딩 적용
+  - 프로그래밍 언어: C++, C#
+  - GUI 프레임워크: MFC, WPF
+  - 개발 도구: Visual Studio 2019
+  - 포트 포워딩 적용
 - **링크**: [멀티 유저 채팅 프로그램](https://github.com/JungHoiSun0522/portfolio/tree/4th_pjt)
 
 ## 📫 연락처
