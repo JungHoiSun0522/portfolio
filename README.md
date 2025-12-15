@@ -24,7 +24,7 @@
 ## 🚀 프로젝트 실행 방법
 1. **레포지토리 클론**
    ```bash
-   git clone -b second_pjt --single-branch https://github.com/JungHoiSun0522/portfolio.git
+   git clone -b 2nd_pjt --single-branch https://github.com/JungHoiSun0522/portfolio.git
    ```
 2. **Visual Studio에서 프로젝트 열기**
    - Visual Studio 2019 이상 권장.
@@ -63,7 +63,7 @@ Image processing using MFC/
 ## 📸 데모 화면
 | 기본 화면 | 히스토그램 평활화 | 콘트라스트 | 히스토그램 평활화 -><br> 콘트라스트 |
 |:---:|:---:|:---:|:---:|
-| ![기본 화면](https://github.com/JungHoiSun0522/portfolio/blob/second_pjt/Image%20processing%20using%20MFC/main_ui.gif) | ![히스토그램 평활화](https://github.com/JungHoiSun0522/portfolio/blob/second_pjt/Image%20processing%20using%20MFC/histogram.JPG) | ![콘트라스트](https://github.com/JungHoiSun0522/portfolio/blob/second_pjt/Image%20processing%20using%20MFC/contrast.JPG) | ![히스토그램 평활화 -> 콘트라스트](https://github.com/JungHoiSun0522/portfolio/blob/second_pjt/Image%20processing%20using%20MFC/hisTOcont.JPG) |
+| ![기본 화면](Image%20processing%20using%20MFC/main_ui.gif) | ![히스토그램 평활화](Image%20processing%20using%20MFC/histogram.JPG) | ![콘트라스트](Image%20processing%20using%20MFC/contrast.JPG) | ![히스토그램 평활화 -> 콘트라스트](Image%20processing%20using%20MFC/hisTOcont.JPG) |
 
 - ### 히스토그램 평활화
    - **원본사진(왼쪽)을 대상으로 히스토그램 평활화 진행**
