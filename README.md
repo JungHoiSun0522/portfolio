@@ -29,7 +29,7 @@
 
 ## 작업 흐름
 
-![프레임워크](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98.jpg)
+![프레임워크](Smart_TV_production_line_automation_factory_solution/assets/img/아키텍처.jpg)
 
 - 로봇 암 조립:
     - Dobot Magician이 패널을 흡착하여 조립 구역으로 이동
