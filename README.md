@@ -52,7 +52,7 @@
 - GUI 프레임워크: MFC, WPF
 - 개발 도구: Visual Studio 2019
 - 포트 포워딩 적용
-- - **링크**: [멀티 유저 채팅 프로그램](https://github.com/JungHoiSun0522/portfolio/tree/4th_pjt)
+- **링크**: [멀티 유저 채팅 프로그램](https://github.com/JungHoiSun0522/portfolio/tree/4th_pjt)
 
 ## 📫 연락처
 - **이메일**: siunm6610@naver.com
