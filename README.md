@@ -28,10 +28,10 @@
 >MFC(Microsoft Foundation Classes)를 활용하여 구현한 이미지 처리 응용 프로그램입니다.
 
 - **기술 스택**:
-- 프로그래밍 언어: C++
-- GUI 프레임워크: MFC (Microsoft Foundation Classes)
-- 개발 도구: Visual Studio 2019
-- 알고리즘: 이미지 처리 및 필터링 알고리즘 (Contrast Adjustment, Histogram Equalization 등)
+  - 프로그래밍 언어: C++
+  - GUI 프레임워크: MFC (Microsoft Foundation Classes)
+  - 개발 도구: Visual Studio 2019
+  - 알고리즘: 이미지 처리 및 필터링 알고리즘 (Contrast Adjustment, Histogram Equalization 등)
 - **링크**: [MFC를 활용한 이미지 처리](https://github.com/JungHoiSun0522/portfolio/tree/2nd_pjt)
 
 ### 3. **VR HMD를 활용한 비정상비행 승무원 교육훈련 콘텐츠** 
