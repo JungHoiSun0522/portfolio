@@ -611,7 +611,7 @@ def task_list(request):
 }
 ```
 
-![백엔드](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/web%20(3).png)
+![백엔드](Smart_TV_production_line_automation_factory_solution/assets/img/web (3).png)
 
 ---
 
@@ -619,12 +619,12 @@ def task_list(request):
 
 ### 프론트엔드 
 
-![프론트1](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/web%20(1).png)
-![프론트2](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/web%20(2).png)
-![프론트4](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/web%20(4).png)
-![프론트5](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/web%20(5).png)
-![프론트6](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/web%20(6).png)
-![프론트7](https://github.com/JungHoiSun0522/portfolio/blob/first_pjt/Smart_TV_production_line_automation_factory_solution/assets/img/web%20(7).png)
+![프론트1](Smart_TV_production_line_automation_factory_solution/assets/img/web%20(1).png)
+![프론트2](Smart_TV_production_line_automation_factory_solution/assets/img/web%20(2).png)
+![프론트4](Smart_TV_production_line_automation_factory_solution/assets/img/web%20(4).png)
+![프론트5](Smart_TV_production_line_automation_factory_solution/assets/img/web%20(5).png)
+![프론트6](Smart_TV_production_line_automation_factory_solution/assets/img/web%20(6).png)
+![프론트7](Smart_TV_production_line_automation_factory_solution/assets/img/web%20(7).png)
 
 
 ### 로봇 제어
