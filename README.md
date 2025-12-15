@@ -1,53 +1,153 @@
-# 🖥️ 포트폴리오
+# 💬 TCP 멀티 유저 채팅 프로그램
 
-**저는 새로운 기술에 도전하는 것을 두려워하지 않는 개발자 정회선입니다.**<br>
-프로젝트마다 새로운 도구와 방식을 시도하며, 늘 더 나은 방법을 고민하고 적용해왔습니다.<br>
-**영상 처리**부터 **VR**, **로봇 시스템**, **데스크탑 애플리케이션**까지 다양한 분야를 경험하며 **폭넓은 시야와 빠른 적응력**을 갖추게 되었습니다.<br>
-이 포트폴리오는 그 과정에서 쌓은 저의 개발 경험을 담은 결과물입니다.
+<p align="center">
+  <strong>WinSock 기반 TCP 서버(MFC)와 WPF 클라이언트로 구현한 멀티 유저 채팅 프로젝트</strong>
+</p>
 
-## 💼 주요 기술
-- **프로그래밍 언어**: C++, C#, Python
-- **프레임워크**: TensorFlow Lite, PyTorch, mediapipe
-- **라이브러리**: OpenCV, ROS2
-- **게임 엔진**: Unity3D
-- **기타 기술**: MFC
+<p align="center">
+  <sub>Low-level Socket Programming · Multi-threaded Server · Windows</sub>
+</p>
 
-## 📂 프로젝트
+---
 
-### 1. **스마트 TV 생산 라인 자동화 솔루션** 
->스마트 TV 생산 공정의 효율성을 극대화하기 위한 통합 자동화 솔루션입니다.
+## 📌 프로젝트 개요
 
-- **기술 스택**: Ros2, RoboDK, Yolov5, OpenCV, RealSense, Django, Vue.js
-- **주요 기능**:
-  - Intel RealSense D435i 카메라와 YOLOv5 모델을 사용하여 패널의 종류를 실시간으로 분류
-  - Dobot Magician 로봇 암 및 컨베이어 벨트를 제어하여 패널을 분류 및 이동
-  - ROS2를 통한 데이터 통신과 장비 간 동작을 관리하며 RoboDK 시뮬레이션을 통해 작업 환경을 테스트
-- **링크**: [스마트 TV 생산 라인 자동화 솔루션](https://github.com/JungHoiSun0522/portfolio/tree/first_pjt)
+본 프로젝트는 WinSock API를 직접 사용하여 TCP 서버를 구현하고,  
+MFC 기반 서버와 WPF 기반 클라이언트로 구성한 멀티 유저 채팅 프로젝트입니다.
 
-### 2. **MFC를 활용한 이미지 처리** 
->MFC(Microsoft Foundation Classes)를 활용하여 구현한 이미지 처리 응용 프로그램입니다.
+서버는 하나의 listen 소켓으로 다수의 클라이언트 접속을 처리하며,  
+각 클라이언트는 전용 스레드에서 송수신을 수행합니다.  
+클라이언트는 UI 스레드와 네트워크 스레드를 분리하여  
+네트워크 대기 중에도 UI가 멈추지 않도록 구성했습니다.
 
-- **기술 스택**:
-- 프로그래밍 언어: C++
-- 프레임워크: MFC (Microsoft Foundation Classes)
-- 개발 도구: Visual Studio 2019
-- 알고리즘: 이미지 처리 및 필터링 알고리즘 (Contrast Adjustment, Histogram Equalization 등)
-- **링크**: [MFC를 활용한 이미지 처리](https://github.com/JungHoiSun0522/portfolio/tree/second_pjt)
+---
 
-### 3. **VR HMD를 활용한 비정상비행 승무원 교육훈련 콘텐츠** 
->비행 중 발생할 수 있는 이상 상황을 학습하고 대처하는 능력을 향상시키기 위한 교육용 소프트웨어입니다.
+## 🛠 개발 환경
 
-- **기술 스택**:
-  - 프로그래밍 언어: C#
-  - 개발 도구: OVR Metrics Tool
-  - 게임 엔진: Unity3D + 2020.3.37f1 (64-bit)
-  - 알고리즘 : Mode 알고리즘
-- **링크**: [VR HMD를 활용한 비정상비행 승무원 교육훈련 콘텐츠](https://github.com/JungHoiSun0522/portfolio/tree/third_pjt)
+| 구분 | 내용 |
+|---|---|
+| **Server** | C++ / MFC / WinSock2 (TCP) |
+| **Client** | C# / WPF (.NET) |
+| **Encoding** | UTF-8 |
+| **OS** | Windows10 |
 
-## 🌱 학습 & 성장
-- **현재 학습 중**: SDI기반 MFC
-- **미래 목표**: 기술로 불편을 해결하고 효율을 높이는 시스템 개발자
+---
 
-## 📫 연락처
-- **이메일**: siunm6610@naver.com
-- **GitHub**: [GitHub 포트폴리오 링크](https://github.com/JungHoiSun0522/portfolio.git)
+## 🧩 전체 구조
+
+```text
+Client (WPF)
+   └─ TCP Socket
+        ↓
+Server (MFC)
+   ├─ Listen Socket
+   ├─ Accept Thread
+   ├─ Client Thread (1 per client) // 클라이언트마다 개별 쓰레드 생성
+   └─ Broadcast Logic
+```
+
+- 단일 listen 소켓으로 접속 요청 수신  
+- accept 이후 클라이언트 전용 소켓 생성  
+- 클라이언트마다 독립적인 송수신 스레드 운영  
+- 서버에서 수신한 메시지를 다른 클라이언트로 전달  
+
+---
+
+## ⚙ 서버 주요 구현 내용 (MFC)
+
+### ▸ Listen / Accept 구조
+- socket → bind → listen 순으로 서버 소켓 초기화  
+- listen은 서버 소켓을 수신 대기 상태로 전환하는 용도로 1회만 호출  
+- accept 전용 스레드에서 클라이언트 연결 처리  
+
+### ▸ 멀티 클라이언트 관리
+- 접속된 클라이언트를 vector<CLIENT_INFO>로 관리  
+- CLIENT_INFO 구성  
+  - SOCKET  
+  - 클라이언트 IP 문자열  
+- 동시 접근 보호를 위해 CCriticalSection 사용  
+
+### ▸ 클라이언트 스레드 모델
+- 클라이언트마다 전용 스레드 생성  
+- recv 반환값 기준 분기 처리  
+  - > 0 : 정상 메시지 수신  
+  - == 0 : 클라이언트 연결 종료  
+  - < 0 : 통신 오류  
+- 연결 종료 시 클라이언트 목록에서 제거  
+
+### ▸ 메시지 브로드캐스트
+- 메시지를 보낸 클라이언트를 제외한 나머지 클라이언트에게 전달  
+- 접속/해제 알림 메시지와 일반 채팅 메시지 구분 처리  
+
+### ▸ 서버 종료 처리
+- 서버 종료 시 listen 소켓 closesocket으로 accept 차단  
+- 강제 스레드 종료 함수 미사용  
+- 스레드가 자연스럽게 종료되도록 설계  
+
+---
+
+## 🔤 문자열 처리 및 인코딩
+
+- 네트워크 통신은 UTF-8 문자열 기준  
+- 서버 내부에서는 CString 사용  
+- UTF-8 문자열과 CString 간 변환을 명시적으로 처리하여  
+  한글 메시지 깨짐 문제를 해결  
+
+---
+
+## 🖥 클라이언트 주요 구현 내용 (WPF)
+
+### ▸ UI / 네트워크 스레드 분리
+- 네트워크 통신은 별도 스레드에서 수행  
+- UI 갱신은 Dispatcher.Invoke를 통해 UI 스레드에서 처리  
+- 네트워크 대기 중 UI 프리징 현상 방지  
+
+### ▸ 채팅 로그 UI
+- ListBox 기반 채팅 로그 출력  
+- 새 메시지 수신 시 자동으로 마지막 항목으로 스크롤  
+- 사용자가 중간 항목을 선택하더라도 이후 메시지는 다시 하단으로 이동  
+
+### ▸ 접속 / 해제 처리
+- 서버 접속 및 해제 시 소켓 상태 안전하게 관리  
+- 연결 중 해제 시 발생하는 예외 상황 처리  
+
+---
+
+## ▶ 실행 방법
+
+```bash
+git clone -b 4th_pjt --single-branch https://github.com/JungHoiSun0522/portfolio.git
+```
+
+1. 서버 프로그램 실행  
+2. 클라이언트에서 이미 설정된 서버 IP 및 포트로 접속  
+3. 메시지 송수신  
+
+## ⚠ 한계 및 개선 방향
+
+- IOCP 기반 비동기 서버 구조 미적용  
+- TLS/암호화 통신 미적용  
+- 채팅방 분리 및 사용자 식별 기능 미구현  
+
+---
+
+## 📂 저장소 구조
+
+```text
+ChatProject/
+├─ Server_MFC/
+│  ├─ *.cpp
+│  ├─ *.h
+│  └─ Resource/
+├─ Client_WPF/
+│  ├─ *.xaml
+│  └─ *.cs
+└─ README.md
+```
+
+---
+
+## 📸 데모 화면
+| 기본 화면 | 1 | 2 | 3 |
+|:---:|:---:|:---:|:---:|
+| ![1]() | ![2]() | ![3]() | ![4]() |
