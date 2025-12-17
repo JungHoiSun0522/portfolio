@@ -26,7 +26,7 @@ MFC 기반 서버와 WPF 기반 클라이언트로 구성한 멀티 유저 채�
 
 | 구분 | 내용 |
 |---|---|
-| IDE | Visual Studio 2019 |
+| **IDE** | Visual Studio 2019 |
 | **Server** | C++ / MFC / WinSock2 (TCP) |
 | **Client** | C# / WPF (.NET Framework 4.7.2) |
 | **Encoding** | UTF-8 |
