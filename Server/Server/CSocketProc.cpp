@@ -1,4 +1,4 @@
-﻿// CSocketProc.cpp: 구현 파일
+// CSocketProc.cpp: 구현 파일
 //
 
 #include "pch.h"
@@ -83,8 +83,15 @@ void CSocketProc::ClientDisconnected(SOCKET sock)
 
 void CSocketProc::BroadcastToClients(SOCKET sock, const char* str, int len) // 메세지를 전달받은 클라이언트를 제외하고 
 {																			// 타 클라이언트에게 메세지를 뿌림.
+	vector<CLIENT_INFO> snapshot;	// clients 스냅샷(복사본)
+
+	{											// 락 범위를 최소화하기 위한 블록
+		CSingleLock lock(&m_criClient, TRUE);	// clients 접근 보호(읽기)
+		snapshot = clients;						// 벡터 전체 복사(순회는 복사본으로)
+	}											// 여기서 락 해제(이후 send는 락 없이 수행)
+
 	int recval;
-	for (auto now : clients)
+	for (auto now : snapshot)
 	{
 		if (now.sock == sock)
 			continue;
@@ -109,7 +116,7 @@ DWORD WINAPI CSocketProc::ClientThread(LPVOID arg)
 		//sockProc->Log(t);															 //=> 디버깅용
 		//CString s;																 //=> 디버깅용
 		//s.Format(_T("recval : %d"), recval);										 //=> 디버깅용
-		if (sockProc->m_bState) // 종료 버튼이 눌러진 상태면 반복문 빠져나옴		 
+		if (sockProc->m_bState) // 종료 버튼이 눌러진 상태면 반복문 빠져나옴		 //=> 디버깅용
 			break;
 
 		if (recval > 0) // 유효한 값을 받으면 실행.
@@ -200,7 +207,12 @@ DWORD WINAPI CSocketProc::listenSock(LPVOID lpParam)
 		}
 
 		CString addr = (CString)inet_ntoa(addrClient.sin_addr); // 클라이언트의 정보를 저장하기 위해 IP주소를 넘김
-		p->clients.emplace_back(CLIENT_INFO{ clientSock, addr }); // 클라이언트의 정보를 벡터로 저장
+		
+		{                                                             // 락 범위 시작(추가 보호)
+			CSingleLock lock(&p->m_criClient, TRUE);                  // clients 벡터 보호(추가 연산 보호)
+			p->clients.emplace_back(CLIENT_INFO{ clientSock, addr }); // 클라이언트 정보 추가
+		}                                                             // 락 해제
+
 		p->Log(CString(_T("[클라이언트 접속] IP : ")) + addr);
 		p->BroadcastToClients(clientSock, s, (int)strlen(s)); // 접속된 클라이언트 이외에 타 클라이언트에 새 유저의 접속을 알림
 
@@ -229,5 +241,4 @@ DWORD WINAPI CSocketProc::listenSock(LPVOID lpParam)
 	p->Log(_T("서버를 종료합니다."));
 
 	return 0;
-
 }
