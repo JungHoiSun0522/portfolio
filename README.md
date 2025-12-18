@@ -10,7 +10,7 @@
 - **프레임워크**: TensorFlow Lite, PyTorch, mediapipe
 - **라이브러리**: OpenCV, ROS2
 - **게임 엔진**: Unity3D
-- **기타 기술**: MFC
+- **기타 기술**: MFC, WPF
 
 ## 📂 프로젝트
 
