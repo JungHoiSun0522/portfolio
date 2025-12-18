@@ -73,7 +73,7 @@
 
 ### 2️⃣ 컨베이어 벨트 제어
 
-![컨베이어벨트](Smart_TV_production_line_automation_factory_solution/assets/img/%EC%BB%A8%EB%B2%A0%EC%9D%B4%EC%96%B4%EB%B2%A8%ED%8A%B8.gif)
+![컨베이어벨트](Smart_TV_production_line_automation_factory_solution/assets/img/컨베이어벨트.gif)
 
 - Raspberry Pi를 이용해 컨베이어 벨트 동작 제어
 - 패널 분류 결과에 따라 **좌/우 이동 또는 다음 공정 이송**
@@ -89,7 +89,7 @@
 
 ### 3️⃣ Dobot Magician 로봇 암 제어
 
-![두봇](Smart_TV_production_line_automation_factory_solution/assets/img/%EB%91%90%EB%B4%87.gif)
+![두봇](Smart_TV_production_line_automation_factory_solution/assets/img/두봇.gif)
 
 - 흡착컵을 이용해 패널을 픽업 및 배치
 - ROS2 Action 기반으로 로봇 위치 제어
@@ -164,7 +164,7 @@ flowchart TD
 ![프론트7](Smart_TV_production_line_automation_factory_solution/assets/img/web%20(7).png)
 
 ### 🤖 로봇 자동 작업
-![매크로작업](Smart_TV_production_line_automation_factory_solution/assets/img/%EB%A4%A8%ED%81%AC%EB%A1%9C%EC%9E%91%EC%97%85.gif)
+![매크로작업](Smart_TV_production_line_automation_factory_solution/assets/img/매크로작업.gif)
 
 ---
 
