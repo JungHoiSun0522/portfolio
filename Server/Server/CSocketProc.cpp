@@ -116,7 +116,7 @@ DWORD WINAPI CSocketProc::ClientThread(LPVOID arg)
 		//sockProc->Log(t);															 //=> 디버깅용
 		//CString s;																 //=> 디버깅용
 		//s.Format(_T("recval : %d"), recval);										 //=> 디버깅용
-		if (sockProc->m_bState) // 종료 버튼이 눌러진 상태면 반복문 빠져나옴		 //=> 디버깅용
+		if (sockProc->m_bState) // 종료 버튼이 눌러진 상태면 반복문 빠져나옴
 			break;
 
 		if (recval > 0) // 유효한 값을 받으면 실행.
@@ -242,3 +242,4 @@ DWORD WINAPI CSocketProc::listenSock(LPVOID lpParam)
 
 	return 0;
 }
+
