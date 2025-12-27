@@ -7,8 +7,8 @@
 
 ## 💼 주요 기술
 - **프로그래밍 언어**: C++, C#, Python
-- **프레임워크**: TensorFlow Lite, PyTorch, mediapipe
-- **라이브러리**: OpenCV, ROS2
+- **프레임워크**: ROS2, mediapipe, YOLO
+- **라이브러리**: OpenCV
 - **게임 엔진**: Unity3D
 - **기타 기술**: MFC, WPF
 
@@ -40,7 +40,7 @@
 - **기술 스택**:
   - 프로그래밍 언어: C#
   - 개발 도구: OVR Metrics Tool
-  - 게임 엔진: Unity3D + 2020.3.37f1 (64-bit)
+  - 물리 엔진: Unity3D + 2020.3.37f1 (64-bit)
   - 알고리즘 : Mode 알고리즘
 - **링크**: [VR HMD를 활용한 비정상비행 승무원 교육훈련 콘텐츠](https://github.com/JungHoiSun0522/portfolio/tree/3rd_pjt)
 
