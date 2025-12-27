@@ -63,7 +63,7 @@ AbnormalFlightTraining/
 
 - **프로그래밍 언어**: C#
 - **개발 도구**: OVR Metrics Tool
-- **게임 엔진**: Unity3D + 2020.3.37f1 (64-bit)
+- **물리 엔진**: Unity3D + 2020.3.37f1 (64-bit)
 
 ---
 
