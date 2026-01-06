@@ -6,7 +6,7 @@
 이 포트폴리오는 그 과정에서 쌓은 저의 개발 경험을 담은 결과물입니다.
 
 ## 💼 주요 기술
-- **OS**: Window 10, Ubuntu 22.04 
+- **OS**: Windows 10, Ubuntu 22.04 
 - **프로그래밍 언어**: C++, C#, Python
 - **프레임워크**: ROS2, mediapipe, YOLO
 - **라이브러리**: OpenCV
