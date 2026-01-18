@@ -193,7 +193,7 @@ void CMFCApplication1Dlg::UpdateViews(const CImage* pic1, const CImage* pic2)
 	// 다이얼로그 OnPaint 트리거
 	Invalidate(FALSE);
 
-	// 그림이 빨리 갱신되도록 Pic 컨트롤도 같이 무효화(선택이지만 권장)
+	// 그림이 빨리 갱신되도록 Pic 컨트롤도 같이 무효화
 	if (GetDlgItem(IDC_PIC1)) GetDlgItem(IDC_PIC1)->Invalidate(FALSE);
 	if (GetDlgItem(IDC_PIC2)) GetDlgItem(IDC_PIC2)->Invalidate(FALSE);
 }
