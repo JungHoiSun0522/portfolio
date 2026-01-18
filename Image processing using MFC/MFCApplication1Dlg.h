@@ -49,8 +49,8 @@ public:
 	void ClearPicture(int picID);
 	void UpdateViews(const CImage* pic1, const CImage* pic2);
 
-	afx_msg void OnBnClickedButton1();
-	afx_msg void OnBnClickedButton2();
-	afx_msg void OnBnClickedButton4();
-	afx_msg void OnBnClickedButton3();
+	afx_msg void OnBnClickedButtonLoad();
+	afx_msg void OnBnClickedButtonHist();
+	afx_msg void OnBnClickedButtonCont();
+	afx_msg void OnBnClickedButtonHistToCont();
 };

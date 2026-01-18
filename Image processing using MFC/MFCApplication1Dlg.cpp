@@ -67,10 +67,10 @@ BEGIN_MESSAGE_MAP(CMFCApplication1Dlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
-	ON_BN_CLICKED(IDC_BUTTON1, &CMFCApplication1Dlg::OnBnClickedButton1)
-	ON_BN_CLICKED(IDC_BUTTON2, &CMFCApplication1Dlg::OnBnClickedButton2)
-	ON_BN_CLICKED(IDC_BUTTON3, &CMFCApplication1Dlg::OnBnClickedButton3)
-	ON_BN_CLICKED(IDC_BUTTON4, &CMFCApplication1Dlg::OnBnClickedButton4)
+	ON_BN_CLICKED(IDC_BUTTON1, &CMFCApplication1Dlg::OnBnClickedButtonLoad)
+	ON_BN_CLICKED(IDC_BUTTON2, &CMFCApplication1Dlg::OnBnClickedButtonHist)
+	ON_BN_CLICKED(IDC_BUTTON3, &CMFCApplication1Dlg::OnBnClickedButtonCont)
+	ON_BN_CLICKED(IDC_BUTTON4, &CMFCApplication1Dlg::OnBnClickedButtonHistToCont)
 END_MESSAGE_MAP()
 
 
@@ -414,7 +414,7 @@ void CMFCApplication1Dlg::DrawToPicture(int picID, const CImage* img)
 	img->Draw(dc.GetSafeHdc(), rc);
 }
 
-void CMFCApplication1Dlg::OnBnClickedButton1()                                                      // 버튼1: 로드
+void CMFCApplication1Dlg::OnBnClickedButtonLoad()                                                      // 버튼1: 로드
 {
 	CFileDialog dlg(TRUE, nullptr, nullptr,                                          // 파일 열기 대화상자
 		OFN_FILEMUSTEXIST | OFN_HIDEREADONLY,                                        // 옵션
@@ -432,7 +432,7 @@ void CMFCApplication1Dlg::OnBnClickedButton1()                                  
 	UpdateViews(&m_srcFull, nullptr);                                                // Pic1=원본, Pic2=비움
 }
 
-void CMFCApplication1Dlg::OnBnClickedButton2()                                                      // 버튼2: 원본은 유지, Pic2=평활화
+void CMFCApplication1Dlg::OnBnClickedButtonHist()                                                      // 버튼2: 원본은 유지, Pic2=평활화
 {
 	if (m_srcFull.IsNull()) return;                                                  // 원본 없으면 종료
 
@@ -442,7 +442,7 @@ void CMFCApplication1Dlg::OnBnClickedButton2()                                  
 	UpdateViews(&m_srcFull, &m_eqFull);                                              // Pic1=원본 유지, Pic2=평활화
 }
 
-void CMFCApplication1Dlg::OnBnClickedButton3()                                                      // 버튼3: 원본은 유지, Pic2=콘트라스트
+void CMFCApplication1Dlg::OnBnClickedButtonCont()                                                      // 버튼3: 원본은 유지, Pic2=콘트라스트
 {
 	if (m_srcFull.IsNull()) return;                                                  // 원본 없으면 종료
 
@@ -452,7 +452,7 @@ void CMFCApplication1Dlg::OnBnClickedButton3()                                  
 	UpdateViews(&m_srcFull, &m_conFull);                                             // Pic1=원본 유지, Pic2=콘트라스트
 }
 
-void CMFCApplication1Dlg::OnBnClickedButton4()                                                      // 버튼4: Pic1=평활화, Pic2=평활화+콘트라스트
+void CMFCApplication1Dlg::OnBnClickedButtonHistToCont()                                                      // 버튼4: Pic1=평활화, Pic2=평활화+콘트라스트
 {
 	if (m_srcFull.IsNull()) return;                                                  // 원본 없으면 종료
 
