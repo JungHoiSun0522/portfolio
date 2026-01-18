@@ -107,9 +107,6 @@ BOOL CMFCApplication1Dlg::OnInitDialog()
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
 
-	//CWnd* pPicture1 = GetDlgItem(IDC_PIC1); // 기준 컨트롤 ID
-	//CWnd* pPicture2 = GetDlgItem(IDC_PIC2); // 크기를 변경할 컨트롤 ID
-
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
 
@@ -218,23 +215,43 @@ static void SetGrayPalette(CImage& img)                                         
 
 static bool CloneImage(const CImage& src, CImage& dst)                               // CImage 안전 복사
 {
-	if (src.IsNull()) return false;                                                  // 소스 없으면 실패
+	if (src.IsNull()) return false;
 
-	dst.Destroy();                                                                   // 기존 dst 제거
-	dst.Create(src.GetWidth(), src.GetHeight(), src.GetBPP());                       // 동일 크기/비트 생성
+	const int w = src.GetWidth();
+	const int h = src.GetHeight();
+	const int bpp = src.GetBPP();
 
-	if (dst.IsNull()) return false;                                                  // 생성 실패 체크
+	if (w <= 0 || h <= 0) return false;
 
-	if (dst.GetBPP() == 8)                                                           // 8bpp면
-		SetGrayPalette(dst);                                                         // 팔레트 세팅(안하면 깨질 수 있음)
+	dst.Destroy();
+	dst.Create(w, h, bpp);
+	if (dst.IsNull()) return false;
 
-	HDC hdcDst = dst.GetDC();                                                        // dst DC 획득
-	HDC hdcSrc = ((CImage&)src).GetDC();                                             // src DC 획득(비 const라 캐스팅)
-	BitBlt(hdcDst, 0, 0, dst.GetWidth(), dst.GetHeight(), hdcSrc, 0, 0, SRCCOPY);    // 전체 복사
-	((CImage&)src).ReleaseDC();                                                      // src DC 해제
-	dst.ReleaseDC();                                                                 // dst DC 해제
+	// 8bpp는 팔레트 설정 필요
+	if (bpp == 8)
+		SetGrayPalette(dst);
 
-	return true;                                                                     // 성공
+	// bytesPerPixel 계산 (지원 포맷만 처리)
+	int bytesPerPixel = 0;
+	if (bpp == 8) bytesPerPixel = 1;
+	else if (bpp == 24) bytesPerPixel = 3;
+	else if (bpp == 32) bytesPerPixel = 4;
+	else return false; // 미지원
+
+	const int rowBytes = w * bytesPerPixel;
+
+	// y줄마다 CImage에게 시작 주소를 받아서 memcpy
+	for (int y = 0; y < h; ++y)
+	{
+		BYTE* srcRow = (BYTE*)src.GetPixelAddress(0, y);
+		BYTE* dstRow = (BYTE*)dst.GetPixelAddress(0, y);
+
+		if (!srcRow || !dstRow) return false;
+
+		memcpy(dstRow, srcRow, rowBytes);
+	}
+
+	return true;
 }
 
 static void BuildEqualizeLUT(const int hist[256], int total, BYTE lut[256])
