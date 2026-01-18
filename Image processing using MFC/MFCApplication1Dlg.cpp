@@ -1,4 +1,4 @@
-
+﻿
 // MFCApplication1Dlg.cpp: 구현 파일
 //
 
@@ -59,15 +59,15 @@ CMFCApplication1Dlg::CMFCApplication1Dlg(CWnd* pParent /*=nullptr*/)
 void CMFCApplication1Dlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_PIC1, m_picture_1);
-	DDX_Control(pDX, IDC_PIC2, m_picture_2);
+	DDX_Control(pDX, IDC_PIC1, m_pic1);
+	DDX_Control(pDX, IDC_PIC2, m_pic2);
 }
 
 BEGIN_MESSAGE_MAP(CMFCApplication1Dlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
-	ON_BN_CLICKED(IDC_BUTTON1, &CMFCApplication1Dlg::OnClickedButton1)
+	ON_BN_CLICKED(IDC_BUTTON1, &CMFCApplication1Dlg::OnBnClickedButton1)
 	ON_BN_CLICKED(IDC_BUTTON2, &CMFCApplication1Dlg::OnBnClickedButton2)
 	ON_BN_CLICKED(IDC_BUTTON3, &CMFCApplication1Dlg::OnBnClickedButton3)
 	ON_BN_CLICKED(IDC_BUTTON4, &CMFCApplication1Dlg::OnBnClickedButton4)
@@ -104,30 +104,11 @@ BOOL CMFCApplication1Dlg::OnInitDialog()
 	//  프레임워크가 이 작업을 자동으로 수행합니다.
 	SetIcon(m_hIcon, TRUE);			// 큰 아이콘을 설정합니다.
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
-	SetWindowText(_T("Image processing using MFC"));
+
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
 
-	CWnd* pPicture1 = GetDlgItem(IDC_PIC1); // 기준 컨트롤 ID
-	CWnd* pPicture2 = GetDlgItem(IDC_PIC2); // 크기를 변경할 컨트롤 ID
-
-	if (pPicture1 && pPicture2)
-	{
-		// 기준 컨트롤의 크기 가져오기
-		CRect rect1;
-		pPicture1->GetWindowRect(&rect1);
-
-		// 변경할 컨트롤의 위치 가져오기
-		CRect rect2;
-		pPicture2->GetWindowRect(&rect2);
-
-		// 기준 컨트롤의 크기 적용 (위치는 유지)
-		rect2.right = rect2.left + rect1.Width();
-		rect2.bottom = rect2.top + rect1.Height();
-
-		// 다이얼로그 기준 좌표로 변환 후 크기 변경
-		ScreenToClient(&rect2);
-		pPicture2->MoveWindow(rect2);
-	}
+	//CWnd* pPicture1 = GetDlgItem(IDC_PIC1); // 기준 컨트롤 ID
+	//CWnd* pPicture2 = GetDlgItem(IDC_PIC2); // 크기를 변경할 컨트롤 ID
 
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
@@ -171,15 +152,18 @@ void CMFCApplication1Dlg::OnPaint()
 	else
 	{
 		CDialogEx::OnPaint();
-		m_picture_1.GetWindowRect(all_rect);
+		m_pic1.GetWindowRect(rect);
 
-		SetDlgItemInt(IDC_POINT_BOX1, all_rect.Width());
-		SetDlgItemInt(IDC_POINT_BOX2, all_rect.Height());
+		SetDlgItemInt(IDC_POINT_BOX1, rect.Width());
+		SetDlgItemInt(IDC_POINT_BOX2, rect.Height());
 
-		m_picture_2.GetWindowRect(all_rect);
+		m_pic2.GetWindowRect(rect);
 
-		SetDlgItemInt(IDC_POINT_BOX3, all_rect.Width());
-		SetDlgItemInt(IDC_POINT_BOX4, all_rect.Height());
+		SetDlgItemInt(IDC_POINT_BOX3, rect.Width());
+		SetDlgItemInt(IDC_POINT_BOX4, rect.Height());
+
+		DrawToPicture(IDC_PIC1, m_viewPic1);
+		DrawToPicture(IDC_PIC2, m_viewPic2);
 	}
 }
 
@@ -190,296 +174,293 @@ HCURSOR CMFCApplication1Dlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
-
-
-void CMFCApplication1Dlg::OnClickedButton1()
+void CMFCApplication1Dlg::ClearPicture(int picID)
 {
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-	if (!image.IsNull()) //사진추가 할 때, picture control이 NULL인지 체크
-		image.Destroy(); //이전에 추가한 사진이 있으면 삭제
-	//픽쳐 컨트롤의 크기를 저장할 CRect 객체
-	m_picture_1.GetWindowRect(all_rect);//GetWindowRect를 사용해서 픽쳐 컨트롤의 크기를 받는다.
-	//CDC* dc; //픽쳐 컨트롤의 DC를 가져올  CDC 포인터
-	dc = m_picture_1.GetDC(); //픽쳐 컨트롤의 DC를 얻는다.
-	//CImage image;//불러오고 싶은 이미지를 로드할 CImage 
+	CWnd* pPic = GetDlgItem(picID);
+	if (!pPic) return;
 
-	static TCHAR BASED_CODE szFilter[] = 
-		_T("이미지 파일(*.BMP, *.GIF, *.JPG, *.PNG) | *.PNG; *.BMP;*.GIF;*.JPG;*.bmp;*.jpg;*.gif |모든파일(*.*)|*.*||");
+	CClientDC dc(pPic);
+	CRect rc;
+	pPic->GetClientRect(&rc);
+	dc.FillSolidRect(&rc, RGB(255, 255, 255));
+}
 
-	CFileDialog dlg(TRUE, _T("*.jpg"), _T("image"), OFN_HIDEREADONLY, szFilter);
+void CMFCApplication1Dlg::UpdateViews(const CImage* pic1, const CImage* pic2)
+{
+	m_viewPic1 = pic1;
+	m_viewPic2 = pic2;
 
-	if (IDOK == dlg.DoModal())
+	// 다이얼로그 OnPaint 트리거
+	Invalidate(FALSE);
+
+	// 그림이 빨리 갱신되도록 Pic 컨트롤도 같이 무효화(선택이지만 권장)
+	if (GetDlgItem(IDC_PIC1)) GetDlgItem(IDC_PIC1)->Invalidate(FALSE);
+	if (GetDlgItem(IDC_PIC2)) GetDlgItem(IDC_PIC2)->Invalidate(FALSE);
+}
+
+static inline BYTE ClampU8(int v)
+{
+	if (v < 0) return 0;
+	if (v > 255) return 255;
+	return (BYTE)v;
+}
+
+static void SetGrayPalette(CImage& img)                                              // 8bpp 그레이 팔레트 설정
+{
+	RGBQUAD table[256];                                                              // 팔레트 배열
+	for (int i = 0; i < 256; ++i)                                                    // 0~255 반복
 	{
-		CString pathName = dlg.GetPathName();
-		//MessageBox(pathName);
-		image.Load(pathName);//이미지 로드
+		table[i].rgbRed = table[i].rgbGreen = table[i].rgbBlue = (BYTE)i;            // R, G, B 설정
+		table[i].rgbReserved = 0;                                                    // 예약값 0
+	}
+	img.SetColorTable(0, 256, table);                                                // 팔레트 적용
+}
 
-		//이미지를 픽쳐 컨트롤 크기로 조정
-		image.StretchBlt(dc->m_hDC, 0, 0, all_rect.Width(), all_rect.Height(), SRCCOPY);
-		ReleaseDC(dc);//DC 해제
+static bool CloneImage(const CImage& src, CImage& dst)                               // CImage 안전 복사
+{
+	if (src.IsNull()) return false;                                                  // 소스 없으면 실패
+
+	dst.Destroy();                                                                   // 기존 dst 제거
+	dst.Create(src.GetWidth(), src.GetHeight(), src.GetBPP());                       // 동일 크기/비트 생성
+
+	if (dst.IsNull()) return false;                                                  // 생성 실패 체크
+
+	if (dst.GetBPP() == 8)                                                           // 8bpp면
+		SetGrayPalette(dst);                                                         // 팔레트 세팅(안하면 깨질 수 있음)
+
+	HDC hdcDst = dst.GetDC();                                                        // dst DC 획득
+	HDC hdcSrc = ((CImage&)src).GetDC();                                             // src DC 획득(비 const라 캐스팅)
+	BitBlt(hdcDst, 0, 0, dst.GetWidth(), dst.GetHeight(), hdcSrc, 0, 0, SRCCOPY);    // 전체 복사
+	((CImage&)src).ReleaseDC();                                                      // src DC 해제
+	dst.ReleaseDC();                                                                 // dst DC 해제
+
+	return true;                                                                     // 성공
+}
+
+static void BuildEqualizeLUT(const int hist[256], int total, BYTE lut[256])
+{
+	int cdf[256] = { 0 };
+	cdf[0] = hist[0];
+	for (int i = 1; i < 256; ++i) cdf[i] = cdf[i - 1] + hist[i];
+
+	int cdf_min = 0;
+	for (int i = 0; i < 256; ++i)
+	{
+		if (cdf[i] != 0) { cdf_min = cdf[i]; break; }
+	}
+
+	const int den = total - cdf_min;
+	for (int i = 0; i < 256; ++i)
+	{
+		int v = 0;
+		if (den > 0) v = (cdf[i] - cdf_min) * 255 / den;
+		lut[i] = ClampU8(v);
 	}
 }
 
-
-
-
-void CMFCApplication1Dlg::OnBnClickedButton2()
+bool EqualizePerChannel_InPlace(CImage& img)
 {
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-	m_picture_2.GetWindowRect(all_rect);
-	dc = m_picture_2.GetDC();
+	if (img.IsNull()) return false;
 
-	int histR[256] = { 0 }, histG[256] = { 0 }, histB[256] = { 0 };
-	int lutR[256], lutG[256], lutB[256];
-	int minR = 255, minG = 255, minB = 255;
+	const int w = img.GetWidth();
+	const int h = img.GetHeight();
+	const int bpp = img.GetBPP();
+	if (w <= 0 || h <= 0) return false;
 
-	int w = image.GetWidth(), h = image.GetHeight();
-
-	HBITMAP hBitmap = (HBITMAP)CopyImage(image, IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION);
-	CImage result_his;
-	result_his.Attach(hBitmap);
-
-	for (int i = 0; i < h; i++)
+	// 8bpp (그레이)
+	if (bpp == 8)
 	{
-		for (int j = 0; j < w; j++)
+		int hist[256] = { 0 };
+
+		for (int y = 0; y < h; ++y)
 		{
-			COLORREF color = image.GetPixel(j, i);
+			BYTE* row = (BYTE*)img.GetPixelAddress(0, y);  // y번째 행 시작 주소
+			if (!row) return false;
 
-			int r = GetRValue(color);
-			int g = GetGValue(color);
-			int b = GetBValue(color);
-
-			histR[r]++;
-			histG[g]++;
-			histB[b]++;
-
-			if (r < minR) minR = r;
-			if (g < minG) minG = g;
-			if (b < minB) minB = b;
+			for (int x = 0; x < w; ++x)
+				hist[row[x]]++;
 		}
-	}
 
-	int sumR = 0, sumG = 0, sumB = 0;
-	int totalPixels = w * h;
-	// 누적 히스토그램을 통한 LUT 계산
-	for (int i = 0; i < 256; i++)
-	{
-		sumR += histR[i];
-		sumG += histG[i];
-		sumB += histB[i];
-		lutR[i] = (int)((float)(sumR - minR) / (totalPixels - minR) * 255);
-		lutG[i] = (int)((float)(sumG - minG)/ (totalPixels - minG) * 255);
-		lutB[i] = (int)((float)(sumB - minB) / (totalPixels - minB) * 255);
-	}
+		BYTE lut[256];
+		BuildEqualizeLUT(hist, w * h, lut);
 
-	// 평활화 적용
-	for (int i = 0; i < h; i++)
-	{
-		for (int j = 0; j < w; j++)
+		for (int y = 0; y < h; ++y)
 		{
-			COLORREF color = image.GetPixel(j, i);
-			int r = GetRValue(color);
-			int g = GetGValue(color);
-			int b = GetBValue(color);
+			BYTE* row = (BYTE*)img.GetPixelAddress(0, y);
+			if (!row) return false;
 
-			int newR = lutR[r];
-			int newG = lutG[g];
-			int newB = lutB[b];
-			// 좌표 (x, y)에 평활화 적용된 색상 설정
-			result_his.SetPixel(j, i, RGB(newR, newG, newB));
+			for (int x = 0; x < w; ++x)
+				row[x] = lut[row[x]];
 		}
+		return true;
 	}
 
-	// 결과 이미지를 Picture Control에 다시 표시
-	result_his.StretchBlt(dc->m_hDC, 0, 0, all_rect.Width(), all_rect.Height(), SRCCOPY);
-	result_his.Detach();
-	ReleaseDC(dc);
+	// 24/32bpp (컬러) : B,G,R 각각 평활화
+	if (bpp == 24 || bpp == 32)
+	{
+		const int bytesPerPixel = (bpp == 24) ? 3 : 4;
+
+		int histB[256] = { 0 }, histG[256] = { 0 }, histR[256] = { 0 };
+
+		// 히스토그램 계산
+		for (int y = 0; y < h; ++y)
+		{
+			BYTE* row = (BYTE*)img.GetPixelAddress(0, y);
+			if (!row) return false;
+
+			for (int x = 0; x < w; ++x)
+			{
+				BYTE* p = row + x * bytesPerPixel; // [B][G][R][A]
+				histB[p[0]]++;
+				histG[p[1]]++;
+				histR[p[2]]++;
+			}
+		}
+
+		BYTE lutB[256], lutG[256], lutR[256];
+		const int total = w * h;
+		BuildEqualizeLUT(histB, total, lutB);
+		BuildEqualizeLUT(histG, total, lutG);
+		BuildEqualizeLUT(histR, total, lutR);
+
+		// LUT 적용
+		for (int y = 0; y < h; ++y)
+		{
+			BYTE* row = (BYTE*)img.GetPixelAddress(0, y);
+			if (!row) return false;
+
+			for (int x = 0; x < w; ++x)
+			{
+				BYTE* p = row + x * bytesPerPixel;
+				p[0] = lutB[p[0]];
+				p[1] = lutG[p[1]];
+				p[2] = lutR[p[2]];
+				// p[3] (알파) 유지
+			}
+		}
+		return true;
+	}
+
+	// 그 외 bpp는 미지원
+	return false;
 }
 
-void CMFCApplication1Dlg::OnBnClickedButton3()
+bool ApplyContrast_InPlace(CImage& img, double alpha)
 {
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	if (img.IsNull()) return false;
 
-	m_picture_2.GetWindowRect(all_rect);
-	dc = m_picture_2.GetDC();
+	const int w = img.GetWidth();
+	const int h = img.GetHeight();
+	const int bpp = img.GetBPP();
+	if (w <= 0 || h <= 0) return false;
 
-	int w = image.GetWidth(), h = image.GetHeight();
-
-	HBITMAP hBitmap = (HBITMAP)CopyImage(image, IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION);
-	CImage result_con;
-	result_con.Attach(hBitmap);
-
-	int minR = 255, minG = 255, minB = 255;
-	int maxR = 0, maxG = 0, maxB = 0;
-	for (int i = 0; i < h; i++)
+	if (bpp == 8)
 	{
-		for (int j = 0; j < w; j++)
+		for (int y = 0; y < h; ++y)
 		{
+			BYTE* row = (BYTE*)img.GetPixelAddress(0, y);
+			if (!row) return false;
 
-			COLORREF color = image.GetPixel(j, i);
-
-			int r = GetRValue(color);
-			int g = GetGValue(color);
-			int b = GetBValue(color);
-			
-			if (r < minR) minR = r;
-			if (r > maxR) maxR = r;
-			if (g < minG) minG = g;
-			if (g > maxG) maxG = g;
-			if (b < minB) minB = b;
-			if (b > maxB) maxB = b;
+			for (int x = 0; x < w; ++x)
+			{
+				int v = row[x];
+				int out = (int)((v - 128) * alpha + 128);
+				row[x] = ClampU8(out);
+			}
 		}
-
+		return true;
 	}
 
-	
-	for (int i = 0; i < h; i++)
+	if (bpp == 24 || bpp == 32)
 	{
-		for (int j = 0; j < w; j++)
+		const int bytesPerPixel = (bpp == 24) ? 3 : 4;
+
+		for (int y = 0; y < h; ++y)
 		{
-			COLORREF color = image.GetPixel(j, i);
-			int r = GetRValue(color);
-			int g = GetGValue(color);
-			int b = GetBValue(color);
+			BYTE* row = (BYTE*)img.GetPixelAddress(0, y);
+			if (!row) return false;
 
-			// 콘트라스트 조정 계산식 수정
-			int newR = (float)(r - minR) / (maxR - minR) * 255;
-			int newG = (float)(g - minG) / (maxG - minG) * 255;
-			int newB = (float)(b - minB) / (maxB - minB) * 255;
+			for (int x = 0; x < w; ++x)
+			{
+				BYTE* p = row + x * bytesPerPixel;
 
-			// 픽셀 값을 0-255 범위로 클램프
-			newR = min(max(newR, 0), 255);
-			newG = min(max(newG, 0), 255);
-			newB = min(max(newB, 0), 255);
-
-			// 새로운 픽셀 값 설정
-			result_con.SetPixel(j, i, RGB(newR, newG, newB));
+				p[0] = ClampU8((int)((p[0] - 128) * alpha + 128)); // B
+				p[1] = ClampU8((int)((p[1] - 128) * alpha + 128)); // G
+				p[2] = ClampU8((int)((p[2] - 128) * alpha + 128)); // R
+			}
 		}
+		return true;
 	}
-	result_con.StretchBlt(dc->m_hDC, 0, 0, all_rect.Width(), all_rect.Height(), SRCCOPY);
-	result_con.Detach();
-	ReleaseDC(dc);
+
+	return false;
 }
 
-void CMFCApplication1Dlg::OnBnClickedButton4()
+void CMFCApplication1Dlg::DrawToPicture(int picID, const CImage* img)
 {
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-	m_picture_1.GetWindowRect(all_rect);
-	dc = m_picture_1.GetDC();
-
-	int histR[256] = { 0 }, histG[256] = { 0 }, histB[256] = { 0 };
-	int lutR[256], lutG[256], lutB[256];
-
-	int w = image.GetWidth(), h = image.GetHeight();
-
-	for (int i = 0; i < h; i++)
+	if (!img || img->IsNull())
 	{
-		for (int j = 0; j < w; j++)
-		{
-			COLORREF color = image.GetPixel(j, i);
-
-			int r = GetRValue(color);
-			int g = GetGValue(color);
-			int b = GetBValue(color);
-
-			histR[r]++;
-			histG[g]++;
-			histB[b]++;
-		}
+		ClearPicture(picID);
+		return;
 	}
 
-	int sumR = 0, sumG = 0, sumB = 0;
-	int totalPixels = w * h;
-	// 누적 히스토그램을 통한 LUT 계산
-	for (int i = 0; i < 256; i++)
-	{
-		sumR += histR[i];
-		sumG += histG[i];
-		sumB += histB[i];
-		lutR[i] = (int)((float)sumR / totalPixels * 255);
-		lutG[i] = (int)((float)sumG / totalPixels * 255);
-		lutB[i] = (int)((float)sumB / totalPixels * 255);
-	}
+	CWnd* pPic = GetDlgItem(picID);
+	if (!pPic) return;
 
-	// 평활화 적용
-	for (int i = 0; i < h; i++)
-	{
-		for (int j = 0; j < w; j++)
-		{
-			COLORREF color = image.GetPixel(j, i);
-			int r = GetRValue(color);
-			int g = GetGValue(color);
-			int b = GetBValue(color);
+	CClientDC dc(pPic);
+	CRect rc;
+	pPic->GetClientRect(&rc);
 
-			int newR = lutR[r];
-			int newG = lutG[g];
-			int newB = lutB[b];
-			// 좌표 (x, y)에 평활화 적용된 색상 설정
-			image.SetPixel(j, i, RGB(newR, newG, newB));
-		}
-	}
-
-	// 결과 이미지를 Picture Control에 다시 표시
-	image.StretchBlt(dc->m_hDC, 0, 0, all_rect.Width(), all_rect.Height(), SRCCOPY);
-	ReleaseDC(dc);
-
-	/*===============================================================================*/
-	m_picture_2.GetWindowRect(all_rect);
-	dc = m_picture_2.GetDC();
-
-	int minR = 255, minG = 255, minB = 255;
-	int maxR = 0, maxG = 0, maxB = 0;
-
-	w = image.GetWidth(), h = image.GetHeight();
-	
-	CImage con_result;
-
-	HBITMAP hBitmap = (HBITMAP)CopyImage(image, IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION);
-	con_result.Attach(hBitmap);
-
-	for (int i = 0; i < h; i++)
-	{
-		for (int j = 0; j < w; j++)
-		{
-
-			COLORREF color = image.GetPixel(j, i);
-
-			int r = GetRValue(color);
-			int g = GetGValue(color);
-			int b = GetBValue(color);
-
-			if (r < minR) minR = r;
-			if (r > maxR) maxR = r;
-			if (g < minG) minG = g;
-			if (g > maxG) maxG = g;
-			if (b < minB) minB = b;
-			if (b > maxB) maxB = b;
-		}
-
-	}
-
-	for (int i = 0; i < h; i++)
-	{
-		for (int j = 0; j < w; j++)
-		{
-			COLORREF color = image.GetPixel(j, i);
-
-			int r = GetRValue(color);
-			int g = GetGValue(color);
-			int b = GetBValue(color);
-
-			int newR = (int)((float)(r - minR) / (maxR - minR) * 255);
-			int newG = (int)((float)(g - minG) / (maxG - minG) * 255);
-			int newB = (int)((float)(b - minB) / (maxB - minB) * 255);
-
-			// 새로운 픽셀 값 설정
-			con_result.SetPixel(j, i, RGB(newR, newG, newB));
-		}
-	}
-
-	con_result.StretchBlt(dc->m_hDC, 0, 0, all_rect.Width(), all_rect.Height(), SRCCOPY);
-	con_result.Detach();
-	image.Detach();
-	ReleaseDC(dc);
+	// 컨트롤 크기에 맞춰 Draw(= 내부적으로 StretchBlt)
+	img->Draw(dc.GetSafeHdc(), rc);
 }
 
+void CMFCApplication1Dlg::OnBnClickedButton1()                                                      // 버튼1: 로드
+{
+	CFileDialog dlg(TRUE, nullptr, nullptr,                                          // 파일 열기 대화상자
+		OFN_FILEMUSTEXIST | OFN_HIDEREADONLY,                                        // 옵션
+		_T("Image Files (*.bmp;*.jpg;*.jpeg;*.png)|*.bmp;*.jpg;*.jpeg;*.png||"));    // 필터
+
+	if (dlg.DoModal() != IDOK) return;                                               // 취소면 종료
+
+	m_srcFull.Destroy();                                                             // 원본 제거
+	m_eqFull.Destroy();                                                              // 캐시 제거
+	m_conFull.Destroy();                                                             // 캐시 제거
+	m_eqConFull.Destroy();                                                           // 캐시 제거
+
+	if (FAILED(m_srcFull.Load(dlg.GetPathName()))) return;                           // 로드 실패 시 종료
+
+	UpdateViews(&m_srcFull, nullptr);                                                // Pic1=원본, Pic2=비움
+}
+
+void CMFCApplication1Dlg::OnBnClickedButton2()                                                      // 버튼2: 원본은 유지, Pic2=평활화
+{
+	if (m_srcFull.IsNull()) return;                                                  // 원본 없으면 종료
+
+	CloneImage(m_srcFull, m_eqFull);                                                 // 원본 복제 → m_eqFull
+	EqualizePerChannel_InPlace(m_eqFull);                                            // 채널별 평활화
+
+	UpdateViews(&m_srcFull, &m_eqFull);                                              // Pic1=원본 유지, Pic2=평활화
+}
+
+void CMFCApplication1Dlg::OnBnClickedButton3()                                                      // 버튼3: 원본은 유지, Pic2=콘트라스트
+{
+	if (m_srcFull.IsNull()) return;                                                  // 원본 없으면 종료
+
+	CloneImage(m_srcFull, m_conFull);                                                // 원본 복제 → m_conFull
+	ApplyContrast_InPlace(m_conFull, 1.3);                                           // 콘트라스트 적용
+
+	UpdateViews(&m_srcFull, &m_conFull);                                             // Pic1=원본 유지, Pic2=콘트라스트
+}
+
+void CMFCApplication1Dlg::OnBnClickedButton4()                                                      // 버튼4: Pic1=평활화, Pic2=평활화+콘트라스트
+{
+	if (m_srcFull.IsNull()) return;                                                  // 원본 없으면 종료
+
+	CloneImage(m_srcFull, m_eqFull);                                                 // 원본 복제 → 평활화 베이스
+	EqualizePerChannel_InPlace(m_eqFull);                                            // 채널별 평활화
+
+	CloneImage(m_eqFull, m_eqConFull);                                               // 평활화 결과 복제
+	ApplyContrast_InPlace(m_eqConFull, 1.3);                                         // 콘트라스트 적용
+
+	UpdateViews(&m_eqFull, &m_eqConFull);                                            // Pic1=평활화, Pic2=평활화+콘트라스트
+}

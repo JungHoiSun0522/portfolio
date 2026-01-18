@@ -33,13 +33,23 @@ protected:
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 public:
-	afx_msg void OnClickedButton1();
-	CStatic m_picture_1;
-	CStatic m_picture_2;
-	CRect all_rect;
-	CDC* dc;
-	CImage image;
+	const CImage* m_viewPic1 = nullptr;  // 현재 Pic1에 보여줄 이미지
+	const CImage* m_viewPic2 = nullptr;  // 현재 Pic2에 보여줄 이미지
 
+	CStatic m_pic1;
+	CStatic m_pic2;
+	CRect rect;
+	CDC* dc;
+	CImage m_srcFull;      // 버튼1로 로드한 "원본(풀 해상도)"
+	CImage m_eqFull;       // 원본에 히스토그램 평활화(풀 해상도)
+	CImage m_conFull;      // 원본에 콘트라스트(풀 해상도)
+	CImage m_eqConFull;    // 평활화한 결과에 콘트라스트(풀 해상도)
+	
+	void DrawToPicture(int picID, const CImage* img);
+	void ClearPicture(int picID);
+	void UpdateViews(const CImage* pic1, const CImage* pic2);
+
+	afx_msg void OnBnClickedButton1();
 	afx_msg void OnBnClickedButton2();
 	afx_msg void OnBnClickedButton4();
 	afx_msg void OnBnClickedButton3();
